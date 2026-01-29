@@ -18,7 +18,7 @@ def load_documents(docs_path="docs"):
     # Load all txt files
     loader = DirectoryLoader(
         path=docs_path,
-        globe="*.txt",
+        glob="*.txt",
         loader_cls=TextLoader
     )
 
@@ -29,7 +29,7 @@ def load_documents(docs_path="docs"):
     
     for i, doc in enumerate(documents[:2]):
         print(f"\nDocument {i+1}:")
-        print(f"\n  Source:             {doc.metada['source']}")
+        print(f"\n  Source:             {doc.metadata['source']}")
         print(f"\n  Content Lenght:     {len(doc.page_content)} Characters")
         print(f"\n  Content Preview:    {doc.page_content[:100]}...")
         print(f"\n  Metadata:           {doc.metadata}")
